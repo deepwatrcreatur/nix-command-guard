@@ -1,0 +1,19 @@
+# 03 Homelab Policy Pack
+
+Status: ready
+
+## Goal
+
+Provide a policy pack tuned to the kinds of commands used in your Nix and homelab repos.
+
+## Deliverables
+
+- conservative defaults for destructive git operations
+- protections for broad `rm` and path-sensitive deletes
+- rules for `sudo`, `ssh`, `nixos-rebuild`, and related host-impacting commands
+- policy examples for temporary exceptions
+
+## Notes
+
+- assume a mixed local-plus-remote admin environment
+- err on the side of confirm over allow
