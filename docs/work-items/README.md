@@ -2,10 +2,10 @@
 
 ## Queue
 
-1. `01-policy-model-and-risk-categories.md` - ready
-2. `02-command-parser-and-decision-engine.md` - ready
-3. `03-homelab-policy-pack.md` - ready
-4. `04-shell-wrapper-and-audit-log.md` - ready
+1. `01-policy-model-and-risk-categories.md` - done
+2. `02-command-parser-and-decision-engine.md` - done
+3. `03-homelab-policy-pack.md` - done
+4. `04-shell-wrapper-and-audit-log.md` - done
 
 ## Rules
 

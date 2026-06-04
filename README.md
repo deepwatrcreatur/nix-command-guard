@@ -12,3 +12,9 @@ Nix-packaged command guardrails for AI coding agents, with emphasis on destructi
 ## Status
 
 Early scaffold. See [docs/work-items/README.md](docs/work-items/README.md).
+
+## Current Direction
+
+- policy-first design
+- deterministic decisions with explicit reasons
+- initial focus on homelab-sensitive shell command categories

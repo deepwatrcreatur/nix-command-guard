@@ -15,6 +15,15 @@
     {
       formatter = forAllSystems ({ pkgs }: pkgs.nixfmt-rfc-style);
 
+      checks = forAllSystems ({ pkgs }: {
+        unit = pkgs.runCommand "nix-command-guard-unit" { } ''
+          export PYTHONPATH="${./src}"
+          cd ${./.}
+          ${pkgs.python3}/bin/python -m unittest discover -s tests -p 'test*.py'
+          touch "$out"
+        '';
+      });
+
       devShells = forAllSystems ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [

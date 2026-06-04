@@ -1,6 +1,12 @@
 # 03 Homelab Policy Pack
 
-Status: ready
+Status: done
+
+## Progress
+
+- implemented `src/nix_command_guard/homelab.py` with 13 initial rules
+- added `git_destructive`, `filesystem_destructive`, `privilege_escalation`, `remote_execution`, `infra_mutation`, and `safe_read_only` rule families
+- added `src/nix_command_guard/cli.py` for testing and evaluation
 
 ## Goal
 
