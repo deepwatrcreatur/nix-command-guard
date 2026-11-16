@@ -5,7 +5,7 @@ Command guardrails for AI coding agents: classify risky shell commands
 
 - Design: `docs/policy-model.md`; planned work in `docs/work-items/`, in order.
 - Outputs so far: `checks`, `devShells` (`nix develop`).
-- Validate: `nix flake check`; policy changes need a test case for both the
+- Validate: `nix flake check` (no packages yet); policy changes need a test case for both the
   allowed and the blocked form of the command.
 - A false "allow" is worse than a false "ask". When in doubt, classify as
   risky.
@@ -27,11 +27,12 @@ Summary (offline fallback):
   three lines above the code they protect; longer reasoning goes in `docs/`
   with a pointer (`# WHY: docs/x.md#heading`). Never narrate the next line.
 - **Before editing a file**, read its tags:
-  `rg -n '# (WHY|GOTCHA|INVARIANT|SECURITY|UPSTREAM|TODO)' <file>`.
+  `grep -nE '# (WHY|GOTCHA|INVARIANT|SECURITY|UPSTREAM|TODO)' <file>`.
   Fix or delete any tag your change makes untrue.
 - **Exported Nix functions** get RFC 145 doc comments (`/** ... */`).
-- **Validate before committing:** the narrowest `nix build` first, then
-  `nix flake check`; read all output. Run `bash -n`/`shellcheck` on shell
+- **Validate before committing:** build the narrowest affected output
+  first (when the flake has packages), then `nix flake check`; read all
+  output. Run `bash -n`/`shellcheck` on shell
   generated from Nix. Exit code 0 is not proof the change worked.
 - **Same change, same PR:** behaviour changes come with docs and a check.
 - **Never commit secrets**, and do not deploy to or change live hosts unless
